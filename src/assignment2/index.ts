@@ -1,3 +1,5 @@
+import Book from "./classes/Book";
+import CartI from "./classes/CartItem";
 import { login, signup } from "./utils/auth.utils"
 import { initializeInventory } from "./utils/inventory.utils";
 import { addShoppingCart, displayBooksInShoppingCart, placeBookBackInInventory, placeBookInShoppingCart } from "./utils/shopping.utils";
@@ -33,6 +35,25 @@ function main(){
     // user presses a button to show books in cart.
 
     displayBooksInShoppingCart(userOneShoppingCart);
+
+
+
+    // Cart Item Creation With Optional Params Using Unions and Intersection
+    const exampleBook = new Book("A Game Of Thrones", "George R. R. Martin", "Fantasy", 20.0)
+
+    // using the union and intersection statment in CartI, we make sure that one of the two params: quantity, and subtotal are given
+    // and that a book is always given in the constructor
+    const cartItemOne = new CartI({quantity:5, book:exampleBook})
+    const cartItemTwo = new CartI({subtotal:60.0, book:exampleBook});
+
+    // using one the two optional parameters, we can deduce the other parameter using exampleBook.price
+    // which means we will output the desired value even if it was not given initially.
+
+    console.log(cartItemOne.displayQuantity());
+    console.log(cartItemOne.displayTotals());
+    console.log(cartItemTwo.displayQuantity());
+    console.log(cartItemTwo.displayTotals());
+
 
 }
 
