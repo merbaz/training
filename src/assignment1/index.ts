@@ -1,9 +1,9 @@
+import User from "../assignment2/classes/User";
+import UserShoppingCart from "../assignment2/classes/UserShoppingCart";
 import Admin from "./classes/Admin";
 import Book from "./classes/Book";
 import Ebook from "./classes/Ebook";
 import Inventory from "./classes/Inventory";
-import User from "./classes/User";
-import UserShoppingCart from "./classes/UserShoppingCart";
 
 
 function main(){
@@ -54,9 +54,9 @@ function main(){
 
     console.log("CREATE SHOPPING CART");
 
-    const myShoppingCart = new UserShoppingCart();
+    const myShoppingCart = new UserShoppingCart(user);
 
-    myShoppingCart.addBook(inventory.bookList[0]);
+    // myShoppingCart.addBook(book);
 
     console.log("myShoppingCart Books:", myShoppingCart.books);
 }

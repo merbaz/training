@@ -1,10 +1,10 @@
-import Book from "../classes/Book"
+import Book from "../classes/Book";
 
 interface ShoppingCart {
     createdOn: Date;
     addBook(book: Book): void;
     removeBook(book: Book): void;
-    viewCart(): Book[];
+    get viewCart(): Book[];
 
 }
 
