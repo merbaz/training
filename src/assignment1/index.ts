@@ -1,9 +1,9 @@
-import Admin from "./assignment1/classes/Admin";
-import Book from "./assignment1/classes/Book";
-import Ebook from "./assignment1/classes/Ebook";
-import Inventory from "./assignment1/classes/Inventory";
-import User from "./assignment1/classes/User";
-import UserShoppingCart from "./assignment1/classes/UserShoppingCart";
+import Admin from "./classes/Admin";
+import Book from "./classes/Book";
+import Ebook from "./classes/Ebook";
+import Inventory from "./classes/Inventory";
+import User from "./classes/User";
+import UserShoppingCart from "./classes/UserShoppingCart";
 
 
 function main(){
