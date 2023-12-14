@@ -5,7 +5,7 @@ class Book {
     price: number;
     coverImage = "";
     description = "";
-    rating = 0.0
+    rating = 0.0;
 
     constructor(_title:string, _author:string, _genre: string, _price:number){
         this.title = _title;
