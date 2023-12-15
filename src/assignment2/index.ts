@@ -1,5 +1,9 @@
 import Book from "./classes/Book";
+import CartIT from "./classes/CartIT";
 import CartI from "./classes/CartItem";
+import Cloth from "./classes/Cloth";
+import Food from "./classes/Food";
+import ShoppingCart from "./classes/ShoppingCart";
 import { login, signup } from "./utils/auth.utils"
 import { initializeInventory } from "./utils/inventory.utils";
 import { addShoppingCart, displayBooksInShoppingCart, placeBookBackInInventory, placeBookInShoppingCart } from "./utils/shopping.utils";
@@ -53,6 +57,29 @@ function main(){
     console.log(cartItemOne.displayTotals());
     console.log(cartItemTwo.displayQuantity());
     console.log(cartItemTwo.displayTotals());
+
+
+    // Using generic types to create shopping cart of different types of cart items
+    const foodItem = new Food("FRUIT", 15.00, new Date("2024-1-10"));
+    const bookItem = exampleBook;
+    const clothItem = new Cloth("L", "Diners", "Shirt", 500.00);
+
+    const cartItemA = new CartIT(foodItem);
+    const cartItemB = new CartIT(bookItem);
+    const cartItemC = new CartIT(clothItem);
+
+    const shoppingCart = new ShoppingCart();
+
+    shoppingCart.addItem(cartItemA);
+    shoppingCart.addItem(cartItemB);
+    shoppingCart.addItem(cartItemC);
+
+    shoppingCart.displayItems();
+
+    shoppingCart.removeItem(cartItemA);
+
+    shoppingCart.displayItems();
+
 
 
 }
