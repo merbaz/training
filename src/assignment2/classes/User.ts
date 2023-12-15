@@ -3,11 +3,15 @@ class User {
     email: string;
     address: string;
     private code: string;
+    isLoggedIn: boolean = false;
+    private password: string;
+
     constructor(_name: string, _email: string, _address: string, _code: string ){
         this.name = _name;
         this.email = _email;
         this.address = _address;
         this.code = _code;
+        this.password = _code;
     }
     // A getter function makes the function a property of the instance rather than the method.
     get userDetails():string{
@@ -30,6 +34,15 @@ class User {
             return this.code;
         }
         throw Error("OTP Not Verified");
+    }
+
+    loginUser(_password: string){
+        if (this.password === _password)
+            this.isLoggedIn = true;
+    }
+
+    logoutUser(){
+        this.isLoggedIn = false;
     }
 
 }

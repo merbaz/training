@@ -1,7 +1,10 @@
+import { BookGenres } from "../types/customTypes";
+
 class Book {
     title: string;
     author: string;
     genre: string;
+    genreEnum: BookGenres = BookGenres.NULL;
     price: number;
     coverImage = "";
     description = "";

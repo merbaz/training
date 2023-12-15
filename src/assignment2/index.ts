@@ -4,6 +4,8 @@ import CartI from "./classes/CartItem";
 import Cloth from "./classes/Cloth";
 import Food from "./classes/Food";
 import ShoppingCart from "./classes/ShoppingCart";
+import User from "./classes/User";
+import { BookGenres } from "./types/customTypes";
 import { login, signup } from "./utils/auth.utils"
 import { initializeInventory } from "./utils/inventory.utils";
 import { addShoppingCart, displayBooksInShoppingCart, placeBookBackInInventory, placeBookInShoppingCart } from "./utils/shopping.utils";
@@ -80,7 +82,21 @@ function main(){
 
     shoppingCart.displayItems();
 
+    // Using enum to represent genre of book
 
+    let bookEnum = exampleBook;
+    bookEnum.genreEnum = BookGenres.FANTASY;
+
+    console.log("Book's Genre:", bookEnum.genreEnum);
+
+    // User login and logout methods using password
+
+    const userThree = new User("Joe", "joe@mail.com", "House 2, Street 3, Block T, City Z", "password");
+
+    userThree.loginUser("password");
+    console.log(`user loggedIn? ${userThree.isLoggedIn} `)
+    userThree.logoutUser();
+    console.log(`user loggedIn? ${userThree.isLoggedIn}`);
 
 }
 
