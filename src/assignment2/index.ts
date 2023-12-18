@@ -94,9 +94,9 @@ function main(){
     const userThree = new User("Joe", "joe@mail.com", "House 2, Street 3, Block T, City Z", "password");
 
     userThree.loginUser("password");
-    console.log(`user loggedIn? ${userThree.isLoggedIn} `)
+    console.log(`user loggedIn? ${userThree.userIsLoggedIn} `)
     userThree.logoutUser();
-    console.log(`user loggedIn? ${userThree.isLoggedIn}`);
+    console.log(`user loggedIn? ${userThree.userIsLoggedIn}`);
 
 }
 
