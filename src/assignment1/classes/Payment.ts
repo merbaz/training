@@ -1,6 +1,10 @@
 abstract class Payment {
-    date: Date;
     userId: number;
+    date: Date = new Date();
+    constructor(_userId: number, _date?:Date, ){
+        this.userId = _userId;
+        this.date = _date || new Date();
+    }
     abstract processPayment(code: string): boolean
 }
 
@@ -22,6 +26,12 @@ class CreditCardPayment extends Payment {
 
 class OtpPayment extends Payment {
     cellNumber: number;
+
+    constructor(_cellNumber: number, _userId: number, _date?:Date){
+        super(_userId, _date);
+        this.cellNumber = _cellNumber
+    }
+
     sendOTP(): boolean {
         //call API to send OTP
         return true;
