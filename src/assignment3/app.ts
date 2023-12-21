@@ -3,8 +3,12 @@ import Invoice from "./classes/Invoice";
 import Ticket from "./classes/Ticket";
 import TicketManager from "./classes/TicketManager";
 import User from "./classes/User";
+import { getUsers } from "./services/users.service";
 
 function main(){
+
+    getUsers();
+
     let user = new User("Alex", "lx@email.com", "l-x, st. 52, Alexburgh", "2231");
     let ticket = new Ticket();
     const myEmitter = new EventEmitter();
