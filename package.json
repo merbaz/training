@@ -1,0 +1,28 @@
+{
+  "name": "fullstack-training-nisum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "assignment3": "ts-node ./src/assignment3/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://merbaz: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@github.com/merbaz/training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/merbaz/training/issues"
+  },
+  "homepage": "https://github.com/merbaz/training#readme",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
+}
