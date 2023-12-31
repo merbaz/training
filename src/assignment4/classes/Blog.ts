@@ -1,9 +1,13 @@
 class Blog {
-    private id = new Date().getTime(); // creates unique Id using timestamp
+    private id; // creates unique Id using timestamp
     private title="";
     private content="";
     private username="";
     private views=0;
+
+    constructor(_id:number){
+        this.id = _id;
+    }
 
     get getId ():number{
         return this.id;

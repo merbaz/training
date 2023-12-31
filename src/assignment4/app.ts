@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import Blog from './classes/Blog';
+import { verifyUserId } from './middlewares/verifyUser';
 
 const app = express();
 const port = 3001;
@@ -26,19 +27,19 @@ app.get('/:id', (req:Request, res:Response)=>{
     }
 })
 
-app.post('/add-blog',  (req:Request, res:Response)=>{
+app.post('/add-blog', verifyUserId, (req:Request, res:Response)=>{
     const body = req.body;
     if ('title' in body && 'content' in body && 'username' in body) {
-        const newBlog = new Blog();
+        const newBlog = new Blog(body.userId);
         newBlog.setTitle = body.title;
         newBlog.setContent = body.content;
         newBlog.setUsername = body.username;
         blogList.push(newBlog);
 
-        res.status(200).send('Success');
+        res.status(200).send({message: 'Success'});
     }
     else{
-        res.status(400).send({message: "Success"})
+        res.status(500).send({message: "Could Not Add Blog"})
     }
 });
 
@@ -54,7 +55,7 @@ app.delete('/delete-blog/:id', (req:Request, res:Response)=>{
     }
 })
 
-app.put('/edit-blog/:id', (req:Request, res:Response)=>{
+app.put('/edit-blog/:id', verifyUserId, (req:Request, res:Response)=>{
     const {body, params:{id}} = req;
     const blogIndex: number = blogList.findIndex(blog => blog.getId === Number(id));
     if(blogIndex !== -1){
