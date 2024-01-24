@@ -2,7 +2,6 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import CartItem from "./CartItem";
 import OrderItem from "./OrderItem";
 
-
 @Entity()
 
 class Book {
