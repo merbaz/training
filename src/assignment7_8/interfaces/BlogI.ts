@@ -2,9 +2,9 @@ interface BlogI {
     title: string,
     userId: string,
     content: string,
-    createdOn: Date,
+    createdOn?: Date,
     lastUpdatedOn?: Date,
-    views: number,
+    views?: number,
     rating?: number,
     tags?: string[]
 }
