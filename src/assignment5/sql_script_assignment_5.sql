@@ -141,5 +141,22 @@
 -- CALL placeOrder(2, @o_id);
 -- SELECT @o_id;
 
+-- DELIMITER $$
+-- CREATE PROCEDURE viewOrderHistory(IN u_id INT)
+-- BEGIN
+-- 	-- Get orders by user_id
+--     SELECT *
+--     FROM assignment_5.orders AS orders 
+--     WHERE orders.user_id = u_id;
+--     
+--     -- Get book ID, quantity and pice for user_id
+--     SELECT book_id, quantity, price
+--     FROM assignment_5.order_items AS oi
+--     JOIN assignment_t.orders AS orders
+--     ON orders.id = oi.order_id;
+--     
+-- END $$
+-- DELIMITER ;
 
+-- CALL viewOrderHistory(2);
 
