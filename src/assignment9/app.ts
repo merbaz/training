@@ -51,6 +51,36 @@ rl.question('Give Path Of File To Copy: ', (source: string)=>{
     })
 })
 
+const sourceFilePath = './src/assignment9/large_file.txt'; // Replace 'large_file.txt' with your actual large file path
+const destinationFilePath = './src/assignment9/processed_file.txt'; // Path to save the processed file
+
+const readStream = fs.createReadStream(sourceFilePath, {highWaterMark: 64});
+const writeStream = fs.createWriteStream(destinationFilePath);
+
+let bytesCompleted = 0;
+readStream.on('data', (chunk) => {
+    console.log(chunk);
+    bytesCompleted = bytesCompleted + chunk.length
+    console.log(`Processed ${bytesCompleted} bytes`);
+    writeStream.write(chunk);
+});
+
+readStream.on('end', () => {
+    console.log('File processing completed.');
+    writeStream.end();
+});
+
+readStream.on('error', (err) => {
+    console.error('Error reading file:', err);
+});
+
+writeStream.on('finish', () => {
+    console.log('Data has been written to the destination file successfully.');
+});
+
+writeStream.on('error', (err) => {
+    console.error('Error writing to destination file:', err);
+});
 
 
 
