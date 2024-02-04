@@ -8,7 +8,8 @@
     "assignment3": "ts-node ./src/assignment3/app.ts",
     "assignment4": "ts-node ./src/assignment4/app.ts",
     "assignment6": "ts-node ./src/assignment6/app.ts",
-    "assignment7": "nodemon ./src/assignment7_8/app.ts"
+    "assignment7": "nodemon ./src/assignment7_8/app.ts",
+    "assignment9": "ts-node ./src/assignment9/app.ts"
   },
   "repository": {
     "type": "git",
