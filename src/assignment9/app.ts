@@ -1,3 +1,4 @@
+import { exec } from "child_process";
 import fs from "fs";
 import readline from "readline";
 
@@ -94,3 +95,20 @@ fs.readFile(imagePath, (err, data) => {
   const base64String = Buffer.from(data).toString('base64');
   console.log('Base64-encoded image:', base64String);
 });
+
+rl.question('Enter a command to execute: ', (command) => {
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing command: ${error.message}`);
+        rl.close();
+        return;
+      }
+      if (stderr) {
+        console.error(`Command error: ${stderr}`);
+        rl.close();
+        return;
+      }
+      console.log(`Command output: ${stdout}`);
+      rl.close();
+    });
+  });
