@@ -39,3 +39,18 @@ rl.question('Enter how far down your directory will be (0 if you want it at root
 })
 
 
+rl.question('Give Path Of File To Copy: ', (source: string)=>{
+    rl.question('Give Path Of File To Paste Content To: ', (destination:string)=>{
+        fs.copyFile(source, destination, (error)=>{
+           if(error){
+            throw error;
+           } 
+           console.log("Copied And Pasted Successfully");
+           rl.close()
+        })
+    })
+})
+
+
+
+
