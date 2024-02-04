@@ -15,18 +15,26 @@ function createDirectories(dirPath: string): void {
 }
 
 
-rl.question('Enter how far down your directory will be: ', (nestNum: string) => {
-    let dirPath = './'; // initialize root directory
-    if(typeof Number(nestNum) === "number" && Number(nestNum) < 0){
-        let nest:number = Number(nestNum);
-        for(let i=0; i<nest; i++){
-            rl.question(`Give directory name for sub nest ${i+1}: `, (dirName)=>{
-                dirPath = dirPath + dirName + "/";
-                return;
-            })
+function askDirName(depth:number, currentDepth:number, dirPath:string):void{
+    rl.question(`Give directory name for sub nest ${currentDepth+1}: `, (dirName)=>{
+        if (currentDepth === depth){
+            createDirectories(`${dirPath}/${dirName}`); // the directory path is now created.
+            rl.close()
+            return;
         }
-        console.log(dirPath);
-        createDirectories(dirPath); // the directory path is now created.
+        askDirName(depth, currentDepth+1, `${dirPath}/${dirName}`)
+        return;
+ })
+}
+
+
+rl.question('Enter how far down your directory will be (0 if you want it at root): ', (nestNum: string) => {
+    let dirPath = './src/assignment9'; // initialize root directory
+    console.log("nestNum:", nestNum);
+    if(typeof Number(nestNum) === "number" && Number(nestNum) >= 0){
+        let depth:number = Number(nestNum);
+        askDirName(depth, 0, dirPath);
+       
     }
 })
 
