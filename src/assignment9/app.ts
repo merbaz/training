@@ -83,4 +83,14 @@ writeStream.on('error', (err) => {
 });
 
 
+const imagePath = './src/assignment9/image.jpg'; 
 
+fs.readFile(imagePath, (err, data) => {
+  if (err) {
+    console.error('Error reading image file:', err);
+    return;
+  }
+
+  const base64String = Buffer.from(data).toString('base64');
+  console.log('Base64-encoded image:', base64String);
+});
