@@ -9,7 +9,8 @@
     "assignment4": "ts-node ./src/assignment4/app.ts",
     "assignment6": "ts-node ./src/assignment6/app.ts",
     "assignment7": "nodemon ./src/assignment7_8/app.ts",
-    "assignment9": "ts-node ./src/assignment9/app.ts"
+    "assignment9": "ts-node ./src/assignment9/app.ts",
+    "assignment11": "ts-node ./src/assignment11/app.ts"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "mongoose": "^8.1.0",
     "mysql2": "^3.7.1",
     "nodemon": "^3.0.3",
+    "socket.io": "^4.7.4",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typeorm": "^0.3.19"
