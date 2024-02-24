@@ -9,7 +9,8 @@
     "assignment4": "ts-node ./src/assignment4/app.ts",
     "assignment6": "ts-node ./src/assignment6/app.ts",
     "assignment7": "nodemon ./src/assignment7_8/app.ts",
-    "assignment9": "ts-node ./src/assignment9/app.ts"
+    "assignment9": "ts-node ./src/assignment9/app.ts",
+    "assignment11": "ts-node ./src/assignment11/app.ts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/merbaz/training#readme",
   "dependencies": {
     "@types/bcrypt": "^5.0.2",
+    "amqplib": "^0.10.3",
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -37,11 +39,13 @@
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
+    "socket.io": "^4.7.4",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typeorm": "^0.3.19"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.10.4",
     "@types/express": "^4.17.21",
     "@types/express-session": "^1.17.10",
     "@types/node": "^20.10.5",
