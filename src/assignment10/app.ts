@@ -7,6 +7,7 @@ import MongoStore from "connect-mongo";
 import 'dotenv/config';
 import passport from "passport";
 import "./middlewares/passport";
+import "./amqpConfig";
 
 const app = express();
 const port = 3001;
