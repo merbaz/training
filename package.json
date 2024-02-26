@@ -10,7 +10,8 @@
     "assignment6": "ts-node ./src/assignment6/app.ts",
     "assignment7": "nodemon ./src/assignment7_8/app.ts",
     "assignment9": "ts-node ./src/assignment9/app.ts",
-    "assignment12": "ts-node ./src/assignment12/app.ts"
+    "assignment12": "ts-node ./src/assignment12/app.ts",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
