@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/assignment12"
+    "start": "node dist/assignment12",
     "test": "echo \"Error: no test specified\" && exit 1",
     "assignment3": "ts-node ./src/assignment3/app.ts",
     "assignment4": "ts-node ./src/assignment4/app.ts",
