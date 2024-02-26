@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "rewrites": [{ "source": "/dist/", "destination": "/dist/assignment12/" }],
     "builds": [
         {
             "src": "dist/assignment12/app.js",
