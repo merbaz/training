@@ -2,12 +2,12 @@
 // import http from "http";
 // import { availableParallelism } from "os";
 import process from "process";
-import express from "express";
+import express, {Request, Response} from "express";
 
 const app = express();
 const port = 3000;
 
-app.get("/test", (_, res) => {
+app.get("/test", (_:Request, res:Response) => {
   let total = 0;
   for (let i = 0; i < 5_000_000; i++) {
     total++;
@@ -15,7 +15,7 @@ app.get("/test", (_, res) => {
   res.send(`the total is: ${total}\n`);
 });
 
-app.get("/", (_, res) => {
+app.get("/", (_:Request, res:Response) => {
   res.send("Hello World");
 });
 
