@@ -1,15 +1,3 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/assignment12/app.ts",
-        "use": "@now/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/assignment12/app.js"
-      }
-    ]
-  }
+  "rewrites": [{ "source": "src/(.*)", "dest": "/api" }]
+}

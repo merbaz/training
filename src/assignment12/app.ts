@@ -20,3 +20,5 @@ app.listen(port, () => {
   console.log(`port: ${port}`);
   console.log(`pid: ${process.pid}`);
 });
+
+export default app;
