@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "dist/assignment12/app.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "src/(.*)",
+        "dest": "dist/assignment12/app.js"
+      }
+    ]
+  }
