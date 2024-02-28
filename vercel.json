@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "src/assignment12/app.ts",
+        "src": "dist/assignment12/app.js",
         "use": "@now/node"
       }
     ],
