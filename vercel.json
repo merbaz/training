@@ -2,7 +2,8 @@
   "builds": [{ "src": "/(.*)", "use": "@npm/node" }],
   "routes": [
     {
-      "src": "/(.*)", "destination":"/dist/api/index.js"
+      "src": "/(.*)",
+      "dest": "/dist/api/index.js"
     }
-]
+  ]
 }
