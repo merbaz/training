@@ -1,4 +1,8 @@
 {
   "builds": [{ "src": "/(.*)", "use": "@npm/node" }],
-  "rewrites": [{ "source": "src/(.*)", "destination": "/api" }]
+  "routes": [
+    {
+      "src": "/(.*)", "destination":"/dist/api/index.js"
+    }
+]
 }
