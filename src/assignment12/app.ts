@@ -1,6 +1,3 @@
-// import cluster from "cluster";
-// import http from "http";
-// import { availableParallelism } from "os";
 import process from "process";
 import express, {Request, Response} from "express";
 
