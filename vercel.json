@@ -1,9 +1,15 @@
 {
-  "builds": [{ "src": "/(.*)", "use": "@npm/node" }],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/api/index.js"
-    }
-  ]
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "dist/app.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "dist/app.js"
+      }
+    ]
+  }

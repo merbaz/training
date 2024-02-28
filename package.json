@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node ./dist/assignment12/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "assignment3": "ts-node ./src/assignment3/app.ts",
-    "assignment4": "ts-node ./src/assignment4/app.ts",
-    "assignment6": "ts-node ./src/assignment6/app.ts",
-    "assignment7": "nodemon ./src/assignment7_8/app.ts",
-    "assignment9": "ts-node ./src/assignment9/app.ts",
-    "assignment12": "ts-node ./src/assignment12/app.ts",
+    "start": "node dist/assignment12/app.js",
+    "dev": "nodemon src/assignment12/app.ts",
     "build": "tsc -p ."
   },
   "repository": {
