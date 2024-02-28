@@ -1,9 +1,8 @@
 {
     "version": 2,
-    "rewrites": [{ "source": "/dist/", "destination": "/dist/assignment12/" }],
     "builds": [
         {
-            "src": "dist/assignment12/app.js",
+            "src": "src/assignment12/app.ts",
             "use": "@now/node"
         }
     ],
